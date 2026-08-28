@@ -154,7 +154,6 @@ const PeopleIcon = () => (
   </svg>
 )
 
-
 const PlayBtnIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
 )
@@ -275,7 +274,7 @@ function Avatar({ person, size = 36 }) {
   if (key && AVATAR_IMGS[key]) {
     return (
       <img
-        className="rs-avatar-img"
+        className="sw-avatar-img"
         src={AVATAR_IMGS[key]}
         alt={person.name || person.sender}
         style={{ width: size, height: size, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
@@ -286,7 +285,7 @@ function Avatar({ person, size = 36 }) {
   const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
   return (
     <div
-      className="rs-avatar-fallback"
+      className="sw-avatar-fallback"
       style={{
         width: size, height: size, borderRadius: '50%',
         background: person.color || '#555',
@@ -303,29 +302,29 @@ function Avatar({ person, size = 36 }) {
 /* ─── CrewTile ────────────────────────────────────────────── */
 function CamTile({ participant }) {
   return (
-    <div className={`rs-cam-tile ${participant.isYou ? 'rs-cam-you' : ''}`}>
+    <div className={`sw-cam-tile ${participant.isYou ? 'sw-cam-you' : ''}`}>
       {/* Camera feed / avatar */}
-      <div className="rs-cam-feed">
+      <div className="sw-cam-feed">
         {participant.camOn && participant.avatarKey ? (
           <img
             src={AVATAR_IMGS[participant.avatarKey]}
             alt={participant.name}
-            className="rs-cam-img"
+            className="sw-cam-img"
           />
         ) : (
-          <div className="rs-cam-avatar-wrap">
+          <div className="sw-cam-avatar-wrap">
             <Avatar person={participant} size={44} />
           </div>
         )}
       </div>
 
       {/* Mic indicator top-right */}
-      <div className="rs-cam-mic-badge">
+      <div className="sw-cam-mic-badge">
         {participant.micMuted ? <MicOffSmallIcon /> : <MicOnSmallIcon />}
       </div>
 
       {/* Name label bottom */}
-      <div className="rs-cam-label">{participant.name}</div>
+      <div className="sw-cam-label">{participant.name}</div>
     </div>
   )
 }
@@ -358,9 +357,9 @@ export default function SessionWrapUp({ onBack }) {
   const [added, setAdded] = useState({})
   const [chatOpen, setChatOpen] = useState(false)
   const [micMuted, setMicMuted] = useState(false)
-    const [camOff, setCamOff] = useState(false)
+  const [camOff, setCamOff] = useState(false)
 
-      const [showEmojiPicker, setShowEmojiPicker] = useState(false)
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false)
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
   const [msgs, setMsgs] = useState(INITIAL_MSGS)
@@ -377,26 +376,26 @@ export default function SessionWrapUp({ onBack }) {
     <div className="sw-root">
 
       {/* ── Navbar ── */}
-      <nav className="navbar">
-        <div className="nav-left">
+      <nav className="sw-navbar">
+        <div className="sw-nav-left">
           <div className="netflix-logo" aria-label="Netflix" />
-          <div className="nav-links">
-            <a className="nav-link">Home</a>
-            <a className="nav-link">TV Shows</a>
-            <a className="nav-link">Movies</a>
-            <a className="nav-link">New &amp; Popular</a>
-            <a className="nav-link">My List</a>
-            <a className="nav-link">Browse by Languages</a>
-            <div className="nav-pill">
-              <span className="new-tag">NEW</span>
+          <div className="sw-nav-links">
+            <a className="sw-nav-link">Home</a>
+            <a className="sw-nav-link">TV Shows</a>
+            <a className="sw-nav-link">Movies</a>
+            <a className="sw-nav-link">New &amp; Popular</a>
+            <a className="sw-nav-link">My List</a>
+            <a className="sw-nav-link">Browse by Languages</a>
+            <div className="sw-nav-pill">
+              <span className="sw-new-tag">NEW</span>
               Watch Party
             </div>
           </div>
         </div>
-        <div className="nav-right">
+        <div className="sw-nav-right">
           <SearchIcon />
           <BellIcon />
-          <div className="profile-square" />
+          <div className="sw-profile-sq" />
         </div>
       </nav>
 
@@ -407,17 +406,15 @@ export default function SessionWrapUp({ onBack }) {
         <main className="sw-main">
 
           {/* Breadcrumb */}
-            <div className="wp-breadcrumb">
-            <div className="wp-n-logo" />
-            <span className="wp-bc-watch">Watch Party</span>
-            <span className="wp-bc-sep">·</span>
-            <span className="wp-bc-crew">The crew</span>
-            <span className="wp-bc-sep">·</span>
+          <div className="sw-breadcrumb">
+            <div className="sw-bc-logo" />
+            <span className="sw-bc-watch">Watch Party</span>
+            <span className="sw-bc-dot">·</span>
+            <span className="sw-bc-crew">The crew</span>
+            <span className="sw-bc-dot">·</span>
             <PeopleIcon />
-            <span className="wp-bc-count">8</span>
+            <span className="sw-bc-count">8</span>
           </div>
-
-
 
           {/* Heading */}
           <h1 className="sw-heading">Party ended <span>🎉</span></h1>
@@ -454,62 +451,64 @@ export default function SessionWrapUp({ onBack }) {
 
           {/* Crew */}
           <h2 className="sw-crew-heading">The crew</h2>
-          <div className="rs-cam-strip">
+          <div className="sw-cam-strip">
             {PARTICIPANTS.map(p => (
               <CamTile key={p.id} participant={p} />
             ))}
             {/* Invite more tile */}
-            <div className="rs-cam-tile rs-cam-invite">
-              <div className="rs-cam-feed rs-cam-invite-inner">
+            <div className="sw-cam-tile sw-cam-invite">
+              <div className="sw-cam-feed sw-cam-invite-inner">
                 <InviteIcon />
-                <span className="rs-cam-invite-text">Invite more crew</span>
+                <span className="sw-cam-invite-text">Invite more crew</span>
               </div>
             </div>
           </div>
 
           {/* Bottom toolbar */}
-          <div className="rs-toolbar sw-toolbar">
+          <div className="sw-toolbar">
             <button
-              className={`rs-tool-btn sw-tool-btn ${micMuted ? 'rs-tool-muted' : ''}`}
+              className={`sw-tool ${micMuted ? 'sw-tool-muted' : ''}`}
               onClick={() => setMicMuted(m => !m)}
               aria-label="Toggle mic"
             >
               <MicIcon muted={micMuted} />
             </button>
             <button
-              className={`rs-tool-btn sw-tool-btn ${camOff ? 'rs-tool-muted' : ''}`}
+              className={`sw-tool ${camOff ? 'sw-tool-muted' : ''}`}
               onClick={() => setCamOff(c => !c)}
               aria-label="Toggle camera"
             >
               <CamIcon />
             </button>
             <div
-              className="rs-emoji-picker-wrap sw-tool-btn"
-              onMouseEnter={() => { clearTimeout(emojiTimerRef.current); setShowEmojiPicker(true) }}
-              onMouseLeave={() => { emojiTimerRef.current = setTimeout(() => setShowEmojiPicker(false), 250) }}
+              className="sw-emoji-picker-wrap"
+              onMouseEnter={() => { setShowEmojiPicker(true) }}
+              onMouseLeave={() => { setShowEmojiPicker(false) }}
+              style={{ position: 'relative', display: 'flex' }}
             >
               {showEmojiPicker && (
-                <div className="rs-toolbar-reaction-popup">
-                  {REACTIONS.map(emoji => (
+                <div className="sw-toolbar-reaction-popup" style={{ position: 'absolute', bottom: '100%', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '4px', background: 'rgba(24,24,24,0.95)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '30px', padding: '6px 10px' }}>
+                  {['❤️', '😂', '😭', '😍', '🔥'].map(emoji => (
                     <button
                       key={emoji}
-                      className="rs-reaction-btn"
-                      onClick={() => { handleReact(emoji); setShowEmojiPicker(false) }}
+                      className="sw-reaction-btn"
+                      onClick={() => setShowEmojiPicker(false)}
                       aria-label={`React with ${emoji}`}
+                      style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '18px' }}
                     >
                       {emoji}
                     </button>
                   ))}
                 </div>
               )}
-              <button className="rs-tool-btn sw-tool-btn" aria-label="Reactions">
+              <button className="sw-tool" aria-label="Reactions">
                 <EmojiIcon />
               </button>
             </div>
-            <button className="rs-tool-btn sw-tool-btn" aria-label="Cast" onClick={() => setIsShareModalOpen(true)}>
+            <button className="sw-tool" aria-label="Cast" onClick={() => setIsShareModalOpen(true)}>
               <CastIcon />
             </button>
-            <button className="rs-tool-btn sw-tool-btn rs-tool-exit" aria-label="Leave party" onClick={() => { navigate('/session-wrap-up') }}>
+            <button className="sw-tool sw-tool-exit" aria-label="Leave party" onClick={() => navigate('/session-wrap-up')}>
               <ExitIcon />
             </button>
           </div>
@@ -543,60 +542,62 @@ export default function SessionWrapUp({ onBack }) {
             />
           </div>
         ) : (
-          <aside className="sw-sidebar">
+          <div className="sw-sidebar-wrap">
+            <aside className="sw-sidebar">
 
-            {/* Thanks */}
-            <div className="sw-thanks-block">
-              <div className="sw-clap-wrap"><ClapIcon /></div>
-              <p className="sw-thanks-title">Thanks for watching together!</p>
-              <p className="sw-thanks-sub">Until next time</p>
-            </div>
+              {/* Thanks */}
+              <div className="sw-thanks-block">
+                <div className="sw-clap-wrap"><ClapIcon /></div>
+                <p className="sw-thanks-title">Thanks for watching together!</p>
+                <p className="sw-thanks-sub">Until next time</p>
+              </div>
 
-            {/* End session */}
-            <button className="sw-end-btn">
-              <EndSessionIcon />
-              <span>End session for everyone</span>
-            </button>
-
-            <div className="sw-divider" />
-
-            {/* What's next */}
-            <div className="sw-next-hdr">
-              <p className="sw-next-title">What's next?</p>
-              <p className="sw-next-sub">Add to the queue or start a new vote</p>
-            </div>
-
-            <div className="sw-next-list">
-              {WHATS_NEXT.map(item => (
-                <div key={item.id} className="sw-next-item">
-                  <div className="sw-thumb-wrap">
-                    <span className="sw-thumb-n">N</span>
-                    <img src={IMGS[item.imgKey]} alt={item.title} className="sw-thumb-img" />
-                  </div>
-                  <div className="sw-next-info">
-                    <span className="sw-next-show">{item.title}</span>
-                    <span className="sw-next-ep">{item.episode}</span>
-                  </div>
-                  <button
-                    className={`sw-plus-btn${added[item.id] ? ' sw-plus-added' : ''}`}
-                    onClick={() => setAdded(p => ({ ...p, [item.id]: true }))}
-                  >
-                    {added[item.id] ? '✓' : <PlusSmIcon />}
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <div className="sw-vote-wrap">
-              <button
-                className="sw-vote-btn"
-                onClick={() => navigate('/what-are-we-watching', { state: { newVote: true } })}
-              >
-                Start a new vote
+              {/* End session */}
+              <button className="sw-end-btn">
+                <EndSessionIcon />
+                <span>End session for everyone</span>
               </button>
-            </div>
 
-          </aside>
+              <div className="sw-divider" />
+
+              {/* What's next */}
+              <div className="sw-next-hdr">
+                <p className="sw-next-title">What's next?</p>
+                <p className="sw-next-sub">Add to the queue or start a new vote</p>
+              </div>
+
+              <div className="sw-next-list">
+                {WHATS_NEXT.map(item => (
+                  <div key={item.id} className="sw-next-item">
+                    <div className="sw-thumb-wrap">
+                      <span className="sw-thumb-n">N</span>
+                      <img src={IMGS[item.imgKey]} alt={item.title} className="sw-thumb-img" />
+                    </div>
+                    <div className="sw-next-info">
+                      <span className="sw-next-show">{item.title}</span>
+                      <span className="sw-next-ep">{item.episode}</span>
+                    </div>
+                    <button
+                      className={`sw-plus-btn${added[item.id] ? ' sw-plus-added' : ''}`}
+                      onClick={() => setAdded(p => ({ ...p, [item.id]: true }))}
+                    >
+                      {added[item.id] ? '✓' : <PlusSmIcon />}
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <div className="sw-vote-wrap">
+                <button
+                  className="sw-vote-btn"
+                  onClick={() => navigate('/what-are-we-watching', { state: { newVote: true } })}
+                >
+                  Start a new vote
+                </button>
+              </div>
+
+            </aside>
+          </div>
         )}
 
       </div>

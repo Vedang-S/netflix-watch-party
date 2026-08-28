@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './WatchingPage.css'
 import WatchPartySidebar from '../components/WatchPartySidebar'
 
@@ -392,8 +392,13 @@ function CustomAddCard({ query, imgUrl, onImgUrlChange, onAdd }) {
 /* ─── Main Component ─────────────────────────────────────── */
 export default function WatchingPage({ onBack }) {
   const navigate = useNavigate()
+  const location = useLocation()
+  const isNewVote = location.state?.newVote === true
+
   const [activeTab, setActiveTab] = useState('people')
-  const [movies, setMovies] = useState(MOVIES)
+  const [movies, setMovies] = useState(
+    isNewVote ? MOVIES.filter(m => m.id !== 1) : MOVIES
+  )
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [customImgUrl, setCustomImgUrl] = useState('')
@@ -533,7 +538,7 @@ export default function WatchingPage({ onBack }) {
           {/* Titles Added grid — stays in place and dims behind the search overlay */}
           <div className="wp-grid-section">
             <div className="wp-titles-header">
-              <span className="wp-titles-label">Titles Added</span>
+              <span className="wp-titles-label">Current Queue</span>
               <span className="wp-titles-count">{movies.length}</span>
             </div>
             <div className="wp-grid">

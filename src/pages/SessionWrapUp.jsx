@@ -193,9 +193,7 @@ const BellIcon = () => (
 )
 
 const ClapIcon = () => (
-  <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
-    <text y="50" fontSize="52">👏</text>
-  </svg>
+  <img src="/clap.png" alt="Clap" />
 )
 const MicOffSmallIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -407,7 +405,7 @@ export default function SessionWrapUp({ onBack }) {
 
           {/* Breadcrumb */}
           <div className="sw-breadcrumb">
-            <div className="sw-bc-logo" />
+            <div className="n-logo" />
             <span className="sw-bc-watch">Watch Party</span>
             <span className="sw-bc-dot">·</span>
             <span className="sw-bc-crew">The crew</span>

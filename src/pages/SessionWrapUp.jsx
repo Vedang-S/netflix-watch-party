@@ -16,8 +16,7 @@ const AVATAR_IMGS = {
   you: 'https://s3-alpha-sig.figma.com/img/0bde/0426/1a9be8954dd84bcd7817f414e18f86ba?Expires=1788739200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=p~6J8YTvbpTGztFsQqX3L2U4UJCVJwGw~pL8k-y3l6pb5jsxLCRBM9IzsJDK6kqi0CxQdnDo4GuNNcMj9KnVCoRGMqTZesXlPwbhiHsp6iy22x8iWdWa~vsiBrvOs7h5GR8kuyKEkPtZrwcH4fAwz1w3bXq6ng94w7iFdOODRp8qnL0Y1jJSTgKIFKLEGoLNLg8MCBG4i8lvErb2RrTq3PcEDU~ab0SG4OGFGVzzzhSamwAEdMsLwvw1kcEtv427lZ~tkn0YUIVJKxRVv8rIAqN6l3QlJVB1A4oritPYbn0nOFXnyQvl12GY80P7LcuMwvYnjNoK3SZ1B9oPLusgXA__',
   rohan: '/rohanbig.png',
   john: '/johnbig.png',
-  nancy: 'https://s3-alpha-sig.figma.com/img/eb9a/a245/6c7c5a67da7d762e55ac7ad96d7f9f12?Expires=1788739200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=XFG-Ez4Kf3hF0KGQ85mikTQRtNaTY7RVKmBB0zS2v9OBW-WhPxatwz~2VnzfGyTSCqTzLo5iK6PNb0lvFBd5njGhdE3XwJSz-cFY4F9uL4HeKCntjLY8I4s5SdTxZFFGjJAmlvkSTbC~sLNc9NT1nUYsLtcCFoNgyLzHdEc3MVYfQTS7TFVWCJY8vv4ESSZIrjUgvBrj70mjexEztG7ejaJRtc8E9egMCyDzgdoX21jNsP5hl~V1M5Q8K6DoS2ZxZmiUq0E6WFPQ7YP43hsjbULNGqhE1X2du~HLDetPsr0eeTQvH6usFWjJ9D-fAOFyuRENl4EtaDGlKzuXQ-jIVQ__',
-  graffica: '/graffica.png'
+  graffica: 'https://media.istockphoto.com/id/2162083784/photo/business-woman-and-portrait-on-video-conference-with-communication-for-virtual-seminar-or.jpg?s=612x612&w=0&k=20&c=NeAdu42WeH78eu3jKd_TCyYXzo3c4VEHKlIr3Mz1mlQ='
 }
 
 /* Public folder images (always available) */
@@ -36,8 +35,6 @@ const PARTICIPANTS = [
   { id: 2, name: 'Nancy',          avatarKey: 'nancy',    micMuted: true,  camOn: false, color: '#9b6fa3' },
   { id: 3, name: 'Rohan',          avatarKey: 'rohan',    micMuted: false, camOn: false, color: '#7a8fa3' },
   { id: 4, name: 'Graffica',       avatarKey: 'graffica', micMuted: false, camOn: true,  isReaction: false },
-  { id: 5, name: 'Akshat',         avatarKey: null,       micMuted: true,  camOn: true,  color: '#c8a830' },
-  { id: 6, name: 'Arpit',          avatarKey: null,       micMuted: true,  camOn: false, color: '#5A6B8A' },
 ]
 const STATS = [
   { icon: 'clock',    label: 'Watch time',     value: '48m', sub: 'Together' },
@@ -471,23 +468,23 @@ export default function SessionWrapUp({ onBack }) {
           </div>
 
           {/* Bottom toolbar */}
-          <div className="rs-toolbar">
+          <div className="rs-toolbar sw-toolbar">
             <button
-              className={`rs-tool-btn ${micMuted ? 'rs-tool-muted' : ''}`}
+              className={`rs-tool-btn sw-tool-btn ${micMuted ? 'rs-tool-muted' : ''}`}
               onClick={() => setMicMuted(m => !m)}
               aria-label="Toggle mic"
             >
               <MicIcon muted={micMuted} />
             </button>
             <button
-              className={`rs-tool-btn ${camOff ? 'rs-tool-muted' : ''}`}
+              className={`rs-tool-btn sw-tool-btn ${camOff ? 'rs-tool-muted' : ''}`}
               onClick={() => setCamOff(c => !c)}
               aria-label="Toggle camera"
             >
               <CamIcon />
             </button>
             <div
-              className="rs-emoji-picker-wrap"
+              className="rs-emoji-picker-wrap sw-tool-btn"
               onMouseEnter={() => { clearTimeout(emojiTimerRef.current); setShowEmojiPicker(true) }}
               onMouseLeave={() => { emojiTimerRef.current = setTimeout(() => setShowEmojiPicker(false), 250) }}
             >
@@ -505,14 +502,14 @@ export default function SessionWrapUp({ onBack }) {
                   ))}
                 </div>
               )}
-              <button className="rs-tool-btn" aria-label="Reactions">
+              <button className="rs-tool-btn sw-tool-btn" aria-label="Reactions">
                 <EmojiIcon />
               </button>
             </div>
-            <button className="rs-tool-btn" aria-label="Cast" onClick={() => setIsShareModalOpen(true)}>
+            <button className="rs-tool-btn sw-tool-btn" aria-label="Cast" onClick={() => setIsShareModalOpen(true)}>
               <CastIcon />
             </button>
-            <button className="rs-tool-btn rs-tool-exit" aria-label="Leave party" onClick={() => { navigate('/session-wrap-up') }}>
+            <button className="rs-tool-btn sw-tool-btn rs-tool-exit" aria-label="Leave party" onClick={() => { navigate('/session-wrap-up') }}>
               <ExitIcon />
             </button>
           </div>

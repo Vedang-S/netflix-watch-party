@@ -111,7 +111,7 @@
 .sw-summary-row {
   display: flex;
   gap: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   align-items: flex-start;
 }
 
@@ -238,7 +238,7 @@
 .sw-crew-heading {
   font-size: 22px;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
   color: #e5e5e5;
 }
 .sw-crew-row {
@@ -296,7 +296,7 @@
 }
 
 /* ── Toolbar ──────────────────────────────────────────────── */
-.sw-toolbar {
+.rs-toolbar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,20 +315,23 @@
 .sw-tool:hover { background: rgba(255,255,255,0.22); }
 .sw-tool-exit:hover { background: rgba(229,9,20,0.18); }
 
+.sw-tool-btn {
+  width: 60px; height: 60px;
+}
 /* ── Action row ───────────────────────────────────────────── */
 .sw-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 12px;
 }
 .sw-act {
   height: 44px; padding: 0 22px;
-  border-radius: 4px;
+  border-radius: 14px;
   display: flex; align-items: center; gap: 8px;
-  font-size: 14px; font-weight: 600;
+  font-size: 18px; font-weight: 550;
   cursor: pointer; border: none;
-  font-family: inherit;
+  font-family: 'Hanken Grotesk', 'Netflix Sans', Helvetica, sans-serif;
   transition: background 0.15s;
 }
 .sw-act-dark { background: rgba(255,255,255,0.13); color: #fff; }
@@ -340,15 +343,19 @@
 .rs-cam-strip {
   display: flex;
   gap: 10px;
-  margin-top: 4px;
+  margin-top: 4px; margin-bottom: 20px;
   flex-shrink: 0;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .rs-cam-tile {
   position: relative;
   flex: 1;
-  min-width: 120px;
+  width: 240px;
+  min-width: 240px;
+  overflow-x: auto;
+  scrollbar-width: none;
   aspect-ratio: 16 / 10;
   background: #181818;
   border-radius: 10px;

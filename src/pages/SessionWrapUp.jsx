@@ -456,12 +456,31 @@ export default function SessionWrapUp({ onBack }) {
               <CamTile key={p.id} participant={p} />
             ))}
             {/* Invite more tile */}
-            <div className="sw-cam-tile sw-cam-invite">
-              <div className="sw-cam-feed sw-cam-invite-inner">
-                <InviteIcon />
-                <span className="sw-cam-invite-text">Invite more crew</span>
-              </div>
-            </div>
+            {/* Custom Scroll Indicator & Invite Circular Button */}
+<div className="sw-cam-end-controls">
+  {/* Vertical Indicators */}
+  <div className="sw-cam-indicators">
+    <div className="sw-indicator-red" />
+    <div className="sw-indicator-grey" />
+  </div>
+
+  {/* Circular Invite Button */}
+  <button className="sw-cam-invite-circle">
+    <svg 
+      width="34" height="34" viewBox="0 0 24 24" 
+      fill="none" stroke="white" strokeWidth="1.8" 
+      strokeLinecap="round" strokeLinejoin="round"
+    >
+      <path d="M14 19a6 6 0 0 0-12 0" />
+      <circle cx="8" cy="9" r="4" />
+      <line x1="19" y1="8" x2="19" y2="14" />
+      <line x1="16" y1="11" x2="22" y2="11" />
+    </svg>
+    <span className="sw-cam-invite-label">
+      Invite more<br/>people
+    </span>
+  </button>
+</div>
           </div>
 
           {/* Bottom toolbar */}

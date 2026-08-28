@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Sidebar Layout Container */
+.rs-sidebar {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 100%;
+  background-color: #000000;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: 'Hanken Grotesk', sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Close Header */
+.rs-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 16px 16px 0;
+  flex-shrink: 0;
+}
+
+.rs-close-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.rs-close-btn:hover {
+  opacity: 1;
+}
+
+/* Navigation Tabs */
+.rs-tabs {
+  display: flex;
+  width: 100%;
+  background: #000000;
+}
+
+.rs-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333333;
+  color: #a3a3a3;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 20px 0 16px 0;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  text-align: center;
+}
+
+.rs-tab:hover {
+  color: #ffffff;
+}
+
+.rs-tab-active {
+  color: #ffffff;
+  border-bottom-color: #e50914;
+}
+
+/* ── PEOPLE SECTION ── */
+.rs-people-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.rs-people-list {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px 16px 20px;
+  gap: 20px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.rs-person {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.rs-avatar-wrapper {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rs-online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #22c55e;
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+
+.rs-person-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.rs-person-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.rs-person-status {
+  font-size: 12px;
+  color: #a3a3a3;
+  line-height: 1.2;
+}
+
+.rs-host-label {
+  color: #a3a3a3;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rs-invite-btn {
+  cursor: pointer;
+  margin-top: 4px;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+}
+
+.rs-invite-btn:hover {
+  opacity: 1;
+}
+
+.rs-invite-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rs-invite-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: #b3b3b3;
+}
+
+/* Currently Leading Section */
+.rs-leading-section {
+  padding: 0 20px 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rs-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 20px;
+}
+
+.rs-leading-heading {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.rs-leading-card {
+  display: flex;
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 64px;
+}
+
+.rs-leading-thumb {
+  width: 120px;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rs-leading-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12px;
+  gap: 4px;
+}
+
+.rs-leading-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rs-leading-votes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.rs-play-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #b81d24;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  margin-bottom: 12px;
+}
+
+.rs-play-btn:hover {
+  background: #e50914;
+}
+
+.rs-host-note {
+  text-align: center;
+  font-size: 11px;
+  color: #737373;
+}
+
+/* ── CHAT SECTION ── */
+.rs-chat-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: calc(100% - 62px);
+  justify-content: space-between;
+  scrollbar-width: none;
+}
+
+.rs-chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+  gap: 28px; /* Increased gap to match the relaxed spacing in image 2 */
+}
+
+.rs-chat-msg {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+
+.rs-chat-avatar-wrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.rs-chat-avatar-wrapper .rs-online-dot {
+  width: 9px;
+  height: 9px;
+}
+
+.rs-chat-you {
+  justify-content: flex-end !important;
+  text-align: right !important;
+}
+
+.rs-chat-bubble-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 75%;
+}
+
+.rs-chat-you .rs-chat-bubble-wrap {
+  align-items: flex-end; /* Ensures "You" and the message are flush right */
+}
+
+.rs-chat-sender {
+  font-size: 15px;
+  font-weight: 700 !important; /* Bolds the sender name */
+  color: #ffffff;
+  padding-left: 0;
+}
+
+.rs-chat-bubble {
+  padding: 0; /* Removes the bubble padding */
+  border-radius: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+  background: transparent; /* Removes bubble background */
+}
+
+.rs-bubble-other {
+  background: transparent;
+  color: #a3a3a3; /* Light gray text for the message */
+}
+
+.rs-bubble-you {
+  background: transparent;
+  color: #a3a3a3; /* Light gray text for the message */
+}
+/* Chat Input Row */
+.rs-chat-input-row {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rs-chat-input-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rs-chat-input {
+  width: 100%;
+  background: #1c1c1e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 10px 38px 10px 14px;
+  font-size: 13px;
+  color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.rs-chat-input::placeholder {
+  color: #666666;
+}
+
+.rs-chat-add-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.rs-chat-send {
+  background: #e50914;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.rs-chat-send:hover {
+  background: #f40612;
+}
+
+/* Attachment Menu Popup */
+.rs-attachment-menu {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  background: #252529;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 124px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 25;
+  animation: rs-pop-in 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes rs-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.rs-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.rs-menu-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}

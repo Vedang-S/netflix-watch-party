@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Backdrop */
+.cpm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+/* Modal Body */
+.cpm-modal {
+  width: 100%;
+  max-width: 420px;
+  background: #1f1f21;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header */
+.cpm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cpm-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.cpm-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: opacity 0.15s ease;
+}
+
+.cpm-close-btn:hover {
+  opacity: 0.7;
+}
+
+/* Form Container */
+.cpm-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cpm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cpm-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e5b3b3;
+}
+
+/* Inputs */
+.cpm-input {
+  width: 100%;
+  background: #161618;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.cpm-input::placeholder {
+  color: #666666;
+}
+
+.cpm-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Options List */
+.cpm-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cpm-option-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cpm-trash-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.cpm-trash-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Add Option Button */
+.cpm-add-btn {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+  transition: background 0.15s ease;
+}
+
+.cpm-add-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Toggle Switch Row */
+.cpm-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cpm-toggle-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Toggle Switch Controls */
+.cpm-switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+.cpm-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cpm-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #38383a;
+  border-radius: 24px;
+  transition: 0.2s;
+}
+
+.cpm-slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+input:checked + .cpm-slider {
+  background-color: #e50914;
+}
+
+input:checked + .cpm-slider:before {
+  transform: translateX(18px);
+}
+
+/* Footer Actions */
+.cpm-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.cpm-cancel-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: opacity 0.15s ease;
+}
+
+.cpm-cancel-btn:hover {
+  opacity: 0.8;
+}
+
+.cpm-create-btn {
+  background: #e50914;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.cpm-create-btn:hover {
+  background: #f40612;
+}

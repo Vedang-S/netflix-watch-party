@@ -60,7 +60,7 @@ const MOVIES = [
 const SEARCH_CATALOG = [
   {
     title: 'The Break-Up',
-    img: '../../public/thebreakup.png',
+    img: '/thebreakup.png',
     gradient: 'linear-gradient(135deg, #7b2350 0%, #2a1030 100%)',
     ageRating: 'U/A 16+',
     meta: '1h 46m',
@@ -69,7 +69,7 @@ const SEARCH_CATALOG = [
   },
   {
     title: 'Operation Safed Sagar',
-    img: '../../public/safedsagar.png',
+    img: '/safedsagar.png',
     gradient: 'linear-gradient(135deg, #2b4a6b 0%, #0e1b26 100%)',
     ageRating: 'U/A 13+',
     meta: '6 Episodes',
@@ -80,7 +80,7 @@ const SEARCH_CATALOG = [
   },
   {
     title: 'Stranger Things',
-    img: '../../public/strangerthings5thumb.jpg',
+    img: '/strangerthings5thumb.jpg',
     gradient: 'linear-gradient(135deg, #5b1414 0%, #14090c 100%)',
     ageRating: 'U/A 16+',
     meta: '4 Seasons',
@@ -90,7 +90,7 @@ const SEARCH_CATALOG = [
   },
   {
     title: 'Interstellar',
-    img: '../../public/interstellar.jpg',
+    img: '/interstellar.jpg',
     gradient: 'linear-gradient(135deg, #17324a 0%, #060c14 100%)',
     ageRating: 'U/A 13+',
     meta: '2h 49m',

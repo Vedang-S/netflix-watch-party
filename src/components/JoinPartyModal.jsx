@@ -8,7 +8,7 @@ const RECENT_INVITES = [
     status: 'Starting in 10 mins',
     hostName: 'Elena R.',
     hostAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80',
-    poster: '../../public/strangerthings.webp',
+    poster: '/strangerthings.webp',
   },
   {
     id: '2',
@@ -16,7 +16,7 @@ const RECENT_INVITES = [
     status: 'Started 5 mins ago',
     hostName: 'Marcus T.',
     hostAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80',
-    poster: '../../public/thewitcher.png',
+    poster: '/thewitcher.png',
   },
 ];
 

@@ -9,8 +9,7 @@ import WatchPartySidebar from '../components/WatchPartySidebar';
 const AVATAR_IMGS = {
   you: 'https://s3-alpha-sig.figma.com/img/0bde/0426/1a9be8954dd84bcd7817f414e18f86ba?Expires=1788739200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=p~6J8YTvbpTGztFsQqX3L2U4UJCVJwGw~pL8k-y3l6pb5jsxLCRBM9IzsJDK6kqi0CxQdnDo4GuNNcMj9KnVCoRGMqTZesXlPwbhiHsp6iy22x8iWdWa~vsiBrvOs7h5GR8kuyKEkPtZrwcH4fAwz1w3bXq6ng94w7iFdOODRp8qnL0Y1jJSTgKIFKLEGoLNLg8MCBG4i8lvErb2RrTq3PcEDU~ab0SG4OGFGVzzzhSamwAEdMsLwvw1kcEtv427lZ~tkn0YUIVJKxRVv8rIAqN6l3QlJVB1A4oritPYbn0nOFXnyQvl12GY80P7LcuMwvYnjNoK3SZ1B9oPLusgXA__',
   rohan: 'https://s3-alpha-sig.figma.com/img/65a9/0947/c89f362d70b4b3dadcd8d0e2ce863ca2?Expires=1788739200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=gixBmjZwGaVf2bt-KJLd9snoAgygsEH4CmCQN-wLs7xtcFqsHDjZ1iJ4erAcMSvj2u8hsrlAlBlghazSsMUQhd6wQM9uLPUYyx~Lv89Vdo72On1rJAaTqtzaUsU7cnjPho6lv0-bhk5t3Z982S0W0uT8-RPkvCO~-etWXDRniHOxXqT1qjHroudKw3z49ezrqakqTbQzvlnUoO~tsT0Zyhw2Fgn9xislcUw9ifIOFdEqyOx47UehP~p5Tu7wy1QUbid1DLLLSR7npV-dsYOXYKvC-KJpL48QFy4qvMyPml3OXIGb7wdpmu5YljQzIdbMqAC--A2aNz49RRBvD6mTNA__',
-  nancy: 'https://s3-alpha-sig.figma.com/img/eb9a/a245/6c7c5a67da7d762e55ac7ad96d7f9f12?Expires=1788739200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=XFG-Ez4Kf3hF0KGQ85mikTQRtNaTY7RVKmBB0zS2v9OBW-WhPxatwz~2VnzfGyTSCqTzLo5iK6PNb0lvFBd5njGhdE3XwJSz-cFY4F9uL4HeKCntjLY8I4s5SdTxZFFGjJAmlvkSTbC~sLNc9NT1nUYsLtcCFoNgyLzHdEc3MVYfQTS7TFVWCJY8vv4ESSZIrjUgvBrj70mjexEztG7ejaJRtc8E9egMCyDzgdoX21jNsP5hl~V1M5Q8K6DoS2ZxZmiUq0E6WFPQ7YP43hsjbULNGqhE1X2du~HLDetPsr0eeTQvH6usFWjJ9D-fAOFyuRENl4EtaDGlKzuXQ-jIVQ__',
-  graffica: 'https://s3-alpha-sig.figma.com/img/c4a9/cb98/b78bc216582ee4cd2602bd9d78c3f57e?Expires=1788739200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=qgbEKjBxWbny3d2tMgUQDA74H1IP5EQx4BuEDvslUflzSJYOA6CPsR-ZEZjAcHldozc6fZo7gPOOjThuLWqKGhQwniY-K7CBNLbwMaqRTLYAU1-svtNFXZOsigpiFi0GQc0GTwo9Z6CqNwPsGFaFxVyryCcBOHn4tlo3s0B5y4kMXpoT~b2k9LvaV1UBGRBhzAf3~opq~VAS9XV1doFBS6yZ1dOhfEnPmGKtkjzUNg7R0kRZ-uNRFNpHth-1p7u-S-Epk4Vb6-PmvkCa52l-GJhaWwE8YGI3zlAnQtQxKjKBxIkttYouU2InaD8U7jfNgFRKuvWiPRtX1hMam8EwSw__',
+  graffica: 'https://media.istockphoto.com/id/2162083784/photo/business-woman-and-portrait-on-video-conference-with-communication-for-virtual-seminar-or.jpg?s=612x612&w=0&k=20&c=NeAdu42WeH78eu3jKd_TCyYXzo3c4VEHKlIr3Mz1mlQ='
 }
 
 /* ─── Participant cam data ────────────────────────────────── */
@@ -411,7 +410,7 @@ export default function ReactionScreen({ onBack }) {
             {/* Thumbnail / video placeholder */}
             <div className="rs-player-thumb">
               <img
-                src="../../public/episode.jpg"
+                src="/episode.jpg"
                 alt="Friends S1E1 Pilot"
                 className="rs-player-img"
               />
